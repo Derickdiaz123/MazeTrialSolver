@@ -72,9 +72,10 @@ class Person(threading.Thread):
                 print(f'{self.name}: Maze Solved!')
                 print(f'Attempts: {self.trials}')
                 print(self.path)
-                self.maze == None
+                self.maze.showPath(self)
+                self.maze = None
                 break
-            except Exception as e:
+            except Exception:
                 self.trials += 1
                 self.x = self.path[0][0]
                 self.y = self.path[0][1]

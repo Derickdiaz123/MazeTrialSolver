@@ -40,3 +40,18 @@ class Maze:
             p.setMaze(self)
             p.start()
             p.join()
+
+    def showPath(self, person):
+        path = person.path
+        border = '*' + ('*' * self.width) + '*'
+        print(border)
+
+        for l in range(0, self.length + 1):
+            indexes = list(filter(lambda x : x[0] == l, person.path))
+            line = '*'
+            for w in range(0, self.width + 1):
+                line += '*' if [l, w] in indexes else ' '
+            line += '*'
+            print(line)
+        print(border)
+
