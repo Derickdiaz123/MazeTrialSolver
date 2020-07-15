@@ -75,6 +75,7 @@ class Person(threading.Thread):
                 self.maze.showPath(self)
                 self.maze = None
                 break
+            
             except Exception:
                 self.trials += 1
                 self.x = self.path[0][0]
